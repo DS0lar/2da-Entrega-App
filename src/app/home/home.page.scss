@@ -25,3 +25,22 @@
 #container a {
   text-decoration: none;
 }
+
+#link{
+  cursor: pointer;
+}
+#inp-custom{
+  border-bottom: 3px solid white;
+  
+}
+
+#box{
+  margin-top: 200px;
+}
+ion-content {
+  --background: url('../../assets/img/fondo.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+

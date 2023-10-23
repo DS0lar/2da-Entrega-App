@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-button>
+    <ion-title class="text-end">Duoc UC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-content">
+  <ion-card id="box">
+    <ion-card-header>
+      <ion-card-title id="title">Registro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
+        <ion-item id="item">
+          <ion-label position="floating">Nombre:</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+        <ion-item id="item">
+          <ion-label position="floating">Apellido:</ion-label>
+          <ion-input formControlName="apellido"></ion-input>
+        </ion-item>
+
+        <ion-item id="item">
+          <ion-label position="floating">Usuario:</ion-label>
+          <ion-input formControlName="user"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-select (ionChange)="cargarComuna()" formControlName="region" label="Region" placeholder="Seleccione">
+            <ion-select-option  *ngFor="let i of regiones" [value]="i.id">{{i.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-select [disabled]="seleccionComuna" formControlName="comuna" label="Comuna" placeholder="Seleccione">
+            <ion-select-option  *ngFor="let i of comunas" [value]="i.id">{{i.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+
+        
+       
+       
+
+        <ion-item id="item">
+          <ion-label position="floating">Contraseña:</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <ion-item id="item">
+          <ion-label position="floating">Confirmar contraseña:</ion-label>
+          <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
+        </ion-item>
+      <br>
+      <div class="ion-text-end">
+        <ion-button (click)="guardar()" id="btn-reg">
+          REGISTRAR
+        </ion-button>
+      </div>
+      
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

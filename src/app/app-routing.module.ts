@@ -11,6 +11,27 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'qr-scanner',
+    loadChildren: () => import('./qr-scanner/qr-scanner.module').then( m => m.QrScannerPageModule)
+  },
+  {
+    path: 'recuperar',
+    loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+  },
+  {
+    path: 'error',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
+  },
+  {
+    path: '**', // Cualquier ruta que no coincida con las rutas definidas anteriormente
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
+  }
+  
 ];
 
 @NgModule({
